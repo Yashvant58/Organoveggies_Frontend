@@ -1,11 +1,9 @@
 import React,{useEffect,useContext} from 'react'
-import { useNavigate } from 'react-router-dom'
 import {UserContext} from "../App";
-function Logout(prop) {
+function Logout() {
     const {dispatch}=useContext(UserContext);
-    const navigate=useNavigate();
     useEffect(()=>{
-        fetch(`${prop.baseUrl}/logout`,{
+        fetch(`/logout`,{
             method:"GET",
             headers:{
                 Accept:"application/json",
@@ -15,7 +13,7 @@ function Logout(prop) {
             credentials:"include"
         }).then((res)=>{
             dispatch({type:"USER",payload:false})
-navigate('/signin',{replace:true});
+// navigate('/signin',{replace:true});
  alert("Log-out successfully")
 if(!res.status===200){
 const error=new Error(res.error);

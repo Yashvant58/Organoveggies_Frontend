@@ -2,13 +2,11 @@ import React,{useEffect,useState} from 'react'
 import Footer from './Footer.js';
 import {Link} from 'react-router-dom';
 import Iframe from 'react-iframe'
-import { useNavigate } from 'react-router-dom'
-function Contact (prop) {
-    const navigate=useNavigate();
+function Contact () {
 const [userData,setUserData]=useState({name:"",email:"",phone:"",message:""});
 const userContact=async()=>{
   try{
-const res=await fetch(`${prop.baseUrl}/getdata`,{
+const res=await fetch(`/getdata`,{
 method:"GET",
 headers:{
   "Content-Type":"application/json"
@@ -25,8 +23,6 @@ throw error;
 }
   }
   catch (err){
-     console.log(err);
-    //  navigate('/signin')
 
   }
 }
@@ -44,7 +40,7 @@ const handleInputs =(e)=>{
 const contactForm = async(e)=>{
     e.preventDefault();
     const  {name,email,phone,message}=userData;
-const response= await fetch(`${prop.baseUrl}/getcontact`,{
+const response= await fetch(`/getcontact`,{
   method:"POST",
   headers:{
     'Content-Type':'application/json'
@@ -107,11 +103,11 @@ const data= await response.json();
         <form action="https://formsubmit.co/prajapatiyashvant746@gmail.com" method="POST" target="_blank">
             <h3>Get In Touch</h3>
             <div className="inputBox">
-                <input type="text"  name="name" value={userData.name}className="box" readOnly required/>
-                <input type="email"  value={userData.email}name="email" className="box" readOnly required/>
+                <input type="text"  name="name" placeholder="Username"className="box" readOnly required/>
+                <input type="email"  placeholder="Name"name="email" className="box" readOnly required/>
             </div>
             <div className="inputBox">
-                <input type="number" name="phone" value={userData.phone} className="box" readOnly required/>
+                <input type="number" name="phone" placeholder='Phone No' className="box" readOnly required/>
             </div>
             <textarea placeholder="Write your message" cols="30" name="message"  onChange={handleInputs} rows="10" required></textarea>
             <button type="submit" onClick={contactForm} className="btn">Send message</button>

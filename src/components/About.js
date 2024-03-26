@@ -1,14 +1,12 @@
 import React,{useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
 import Footer from './Footer.js';
-import { useNavigate } from 'react-router-dom'
-function About2(prop) {
-    const navigate=useNavigate();
+function About2() {
       // eslint-disable-next-line
     const [userData,setUserData]=useState("");
     const callAboutPage=async()=>{
     try{
-        const res=await fetch(`${prop.baseUrl}/about`,{
+        const res=await fetch(`/about`,{
           method:"GET",
           headers:{
             Accept:"apllication/json",
@@ -26,7 +24,6 @@ function About2(prop) {
         }
             }
             catch (err){
-            //   navigate('/signin')
             }
         }
             useEffect(() => {

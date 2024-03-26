@@ -1,9 +1,8 @@
 import {React,useState,useContext} from 'react'
 import {Link} from "react-router-dom";
 import {UserContext} from "../App"
-import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
-const Login=(prop)=>{
+const Login=()=>{
 const {dispatch} = useContext(UserContext);
 const [ispassword, setIspassword] = useState(true);
  
@@ -11,12 +10,11 @@ const handleClick = event => {
   setIspassword(current => !current);
 };
 
-  const navigate=useNavigate();
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const loginUser=async(e)=>{
   e.preventDefault();
-  const response=await fetch(`${prop.baseUrl}/signin`,{
+  const response=await fetch(`/signin`,{
 method:"POST",
 headers:{
   "Content-Type":"application/json"
@@ -33,7 +31,6 @@ body:JSON.stringify({
   }else{
     dispatch({type:"USER",payload:true})
     window.alert("Login successfully");
-    navigate("/");
   }
 }
   return (

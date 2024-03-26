@@ -1,15 +1,12 @@
 import {Link} from 'react-router-dom';
 import Footer from './Footer.js';
 import React,{useEffect,useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-function Cart(prop) {
-
-    const navigate=useNavigate();
+function Cart() {
       // eslint-disable-next-line
     const [useData,setUserData]=useState("");
     const callAboutPage=async()=>{
     try{
-        const res=await fetch(`${prop.baseUrl}/cart`,{
+        const res=await fetch(`/cart`,{
           method:"GET",
           headers:{
             Accept:"apllication/json",
@@ -27,7 +24,6 @@ function Cart(prop) {
         }
             }
             catch (err){
-              // navigate('/signin')
             }
         }
             useEffect(() => {

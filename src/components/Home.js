@@ -1,13 +1,13 @@
 import React from 'react'
 import {useState,useEffect} from 'react';
 import Footer from './Footer';
-function Home(prop) {
+function Home() {
   const [userName,setUserName]=useState('');
   const [show, setShow] = useState(false);
   const [value,setValue]=useState(false);
 const userHomePage=async()=>{
   try{
-const res=await fetch(`${prop.baseUrl}/getdata`,{
+const res=await fetch(`/getdata`,{
 method:"GET",
 headers:{
   "Content-Type":"application/json"

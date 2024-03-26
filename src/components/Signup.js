@@ -1,8 +1,7 @@
 import {React,useState} from 'react'
-import {Link,useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Footer from './Footer';
 function Signup(prop) {
-const navigate=useNavigate();
   const [user,setUser]=useState({
     name:"",email:"",phone:"",work:"",password:"",cpassword:""
   });
@@ -18,7 +17,7 @@ const navigate=useNavigate();
     e.preventDefault();
 const {name,email,phone,work,password,cpassword}=user;
 
-const response= await fetch(`${prop.baseUrl}/register`,{
+const response= await fetch(`/register`,{
   method:"POST",
   headers:{
     'Content-Type':'application/json'
@@ -39,7 +38,7 @@ if(!data){
 }else{
   window.alert(" Registration successful");
 
-  navigate("/signin");
+  // navigate("/signin");
 }
   }
 

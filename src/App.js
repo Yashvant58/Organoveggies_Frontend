@@ -25,24 +25,23 @@ export const UserContext=createContext();
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   //  const baseUrl="http://localhost:7777";
-   const baseUrl="";
   return (
     <>
     <UserContext.Provider value={{state,dispatch}}>
   <BrowserRouter>
   <Navbar/>
   <Routes>
-  <Route exact path="/" element={ <Home baseUrl={baseUrl}/>}/>
-  <Route path="/home" element={ <Home2 baseUrl={baseUrl} />}/>
-  <Route path="/about"  element={ <About baseUrl={baseUrl}/>}/>
-  <Route path="/shop"  element={ <Shop baseUrl={baseUrl}/>}/>
-  <Route path="/review" element={ <Review baseUrl={baseUrl}/>}/>
-  <Route path="/blog"  element={ <Blog baseUrl={baseUrl}/>}/>
-  <Route path="/cart" element={ <Cart baseUrl={baseUrl}/>}/>
-  <Route path="/contact" element={ <Contact baseUrl={baseUrl}/>}/>
-  <Route path="/signin"  element={ <Signin baseUrl={baseUrl} />}/>
-  <Route path="/signup" element={ <Signup baseUrl={baseUrl}/>}/>
-  <Route path="/logout" element={ <Logout baseUrl={baseUrl}/>}/>
+  <Route exact path="/" element={ <Home />}/>
+  <Route path="/home" element={ <Home2  />}/>
+  <Route path="/about"  element={ <About />}/>
+  <Route path="/shop"  element={ <Shop />}/>
+  <Route path="/review" element={ <Review />}/>
+  <Route path="/blog"  element={ <Blog />}/>
+  <Route path="/cart" element={ <Cart />}/>
+  <Route path="/contact" element={ <Contact />}/>
+  <Route path="/signin"  element={ <Signin  />}/>
+  <Route path="/signup" element={ <Signup />}/>
+  <Route path="/logout" element={ <Logout />}/>
   <Route path='*' element={<Errorpage/>}/>
   </Routes>
   </BrowserRouter>
