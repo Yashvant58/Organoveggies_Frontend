@@ -27,7 +27,7 @@ function Review(prop) {
             }
             catch (err){
        
-              navigate('/signin')
+            //   navigate('/signin')
             }
         }
             useEffect(() => {

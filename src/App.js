@@ -24,10 +24,8 @@ import {initialState,reducer} from "../src/UseReducer"
 export const UserContext=createContext();
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const baseUrl="https://organoveggieserver-production.up.railway.app";
-  //const baseUrl="https://superb-pika-676ded.netlify.app";
   //  const baseUrl="http://localhost:7777";
-   const baseUrl="https://organoveggie.onrender.com";
+   const baseUrl="";
   return (
     <>
     <UserContext.Provider value={{state,dispatch}}>

@@ -27,7 +27,7 @@ function Blog(prop) {
         }
             }
             catch (err){
-              navigate('/signin')
+            //   navigate('/signin')
             }
         }
             useEffect(() => {

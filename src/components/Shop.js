@@ -28,7 +28,7 @@ function Shop(prop) {
         }
             }
             catch (err){
-              navigate('/signin')
+            //   navigate('/signin')
             }
         }
             useEffect(() => {

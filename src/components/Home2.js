@@ -27,7 +27,7 @@ function Home2(prop) {
         }
             }
             catch (err){
-              navigate('/signin')
+            //   navigate('/signin')
             }
         }
             useEffect(() => {

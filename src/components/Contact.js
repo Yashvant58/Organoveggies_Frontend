@@ -18,7 +18,7 @@ credentials:"include",
 });
 const data=await res.json();
 setUserData({...userData,name:data.name,email:data.email,phone:data.phone});
-
+console.log(userData);
 if(!res.status===200){
 const error =new Error(res.error);
 throw error;
@@ -26,14 +26,14 @@ throw error;
   }
   catch (err){
      console.log(err);
-     navigate('/signin')
+    //  navigate('/signin')
 
   }
 }
 useEffect(() => {
   userContact();
 
-},[])
+})
 
 let name,value;
 const handleInputs =(e)=>{
